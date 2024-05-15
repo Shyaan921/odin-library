@@ -9,9 +9,9 @@ function Book(title, author, pages, status) {
     this.status = status;
     this.info = function() {
         if (this.status === 'read') {
-            return this.title + " by " + this.author + ", " + this.pages + " pages, " + "already read."  
+            return this.title + " by " + this.author + ", " + this.pages + " pages, " + "read"  
         } else {
-            return this.title + " by " + this.author + ", " + this.pages + " pages, " + "not read yet."
+            return this.title + " by " + this.author + ", " + this.pages + " pages, " + "not read"
         };
     };
 };
@@ -45,10 +45,10 @@ function displayLibrary() {
         deleteBtn.value = each;
 
         let titlePara = document.createElement('div');
-        titlePara.innerText = myLibrary[each].title;
+        titlePara.innerText = "Title: " + myLibrary[each].title;
 
         let authorPara = document.createElement('div');
-        authorPara.innerText = "by " + myLibrary[each].author;
+        authorPara.innerText = "Author: " + myLibrary[each].author;
 
         let pagesPara = document.createElement('div');
         pagesPara.innerText = "Pages: " + myLibrary[each].pages;
@@ -57,9 +57,11 @@ function displayLibrary() {
         changeBtn.classList = "change";
         changeBtn.value = each;
         if (myLibrary[each].status === 'read') {
-            changeBtn.innerText = "Already read";
+            changeBtn.innerText = "read";
+            changeBtn.classList = 'read'
         } else {
-            changeBtn.innerText = "Not read yet";
+            changeBtn.innerText = "not read";
+            changeBtn.classList = 'not-read'
         };
 
         card.appendChild(deleteBtn)
