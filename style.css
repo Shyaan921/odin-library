@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+    color: white;
+}
+
+button {
+    background-color: green;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    color: white;
+    border: 1px solid black;
+}
+
+.delete {
+    background-color: lightgreen;
+    
+}
+
+.container {
+    font-size: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 20%));
+    gap: 15px;
+}
+
+.card {
+    text-align: center;
+    background-color: green;
+    box-shadow: 5px 5px 5px gray;
+    border: 2px solid black;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin: 10px;
+}
