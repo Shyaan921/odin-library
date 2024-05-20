@@ -2,26 +2,21 @@ const myLibrary = [
     
 ];
 
-function Book(title, author, pages, status) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.status = status;
-    this.info = function() {
-        if (this.status === 'read') {
-            return this.title + " by " + this.author + ", " + this.pages + " pages, " + "read"  
-        } else {
-            return this.title + " by " + this.author + ", " + this.pages + " pages, " + "not read"
-        };
-    };
-};
+class Book {
+    constructor(title, author, pages, status) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+    }
 
-Book.prototype.toggleRead = function() {
-    if (this.status === 'read') {
-        this.status = 'not read'
-    } else {
-        this.status = 'read'
-    };
+    toggleRead() {
+        if (this.status === 'read') {
+            this.status = 'not read'
+        } else {
+            this.status = 'read'
+        };
+    }
 }
 
 function addToLibrary(title, author, pages, status) {
